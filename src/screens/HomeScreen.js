@@ -146,14 +146,14 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         {/* <Text style={styles.title}>{isWorking===true?'Working':'Resting'}</Text> */}
         <View style={styles.clockContainer}>
-            <TouchableOpacity
+            {/* <TouchableOpacity
             onPress={() =>
               navigation.navigate('Setting')}
               activeOpacity={0.7}
               style={styles.setting}
           >
             <SettingIcon name="settings-sharp" size={30} color='#FFFFFF'  />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <Text style={{color:'#FFFFFF', fontSize:20,fontWeight: 'bold',marginTop:120}}>Eye Cycle</Text>
           <IconTriangle name="caretdown" size={20} color='#FFFFFF'/>
           <Timer

@@ -1,23 +1,27 @@
+
+
 import * as React from 'react';
-
+//import { NavigationContainer } from '@react-navigation/native';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "./src/screens/HomeScreen";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-const Stack = createNativeStackNavigator();
-const App = () => {
-  return(
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{ title: 'Welcome' }}
-          />
+import Setting from "./src/screens/Setting"
 
-      </Stack.Navigator>
-      
-    </NavigationContainer>
-  
+//const Stack = createNativeStackNavigator();
+
+const App = () => {
+  return (
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen
+    //       name="Home"
+    //       component={HomeScreen}
+    //       options={{ title: 'Welcome' }}
+    //     />
+    //     </Stack.Navigator>
+    //   {/* <HomeScreen/> */}
+    // </NavigationContainer>
+     <HomeScreen/> 
   );
 };
+
 export default App;
