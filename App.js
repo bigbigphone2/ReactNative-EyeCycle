@@ -6,20 +6,42 @@ import {
 import Timer from './src/components/Timer'
 import Status from './src/components/Status'
 import RoundButton from './src/gadgets/RoundButton'
+import PushNotification from 'react-native-push-notification'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       isActive: false,
-      contTime: 3599999,
-      //contTime: 2000,
+      //contTime: 3599999,
+      contTime: 2000,
       isWorking: true,
       isShowResume: false,
 
       start: 0,
       now: 0,
     }
+    this.creatCahnnel()
+  }
+  creatCahnnel =() =>{
+    PushNotification.createChannel({
+      channelId:"test-channel",
+      channelName:"Test channel"
+    })
+  }
+  handleNotificationRest=()=>{
+    PushNotification.cancelAllLocalNotifications();
+    PushNotification.localNotification({
+      channelId:"test-channel",
+      message:"Time to Rest",
+    })
+  }
+  handleNotificationWork=()=>{
+    PushNotification.cancelAllLocalNotifications();
+    PushNotification.localNotification({
+      channelId:"test-channel",
+      message:"Time to Work",
+    })
   }
   componentWillUnmount() {
     clearInterval(this.timer)
@@ -43,6 +65,7 @@ export default class App extends Component {
     
   }
   switchAndStart = () =>{
+    
     clearInterval(this.timer)
     const { isWorking,contTime } = this.state
     if (isWorking===false){
@@ -52,6 +75,7 @@ export default class App extends Component {
         contTime: 3599999,
         //contTime: 2000,
       })
+      this.handleNotificationWork()
     }else{
       this.setState({
         isActive: false,
@@ -59,6 +83,7 @@ export default class App extends Component {
         contTime: 300000,
         //conTime: 1000,
       })
+      this.handleNotificationRest()
     }  
     this.start()
   }

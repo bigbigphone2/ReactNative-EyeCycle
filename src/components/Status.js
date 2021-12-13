@@ -43,10 +43,11 @@ const Status = ({isWorking}) => {
 
 const styles = StyleSheet.create({
   container:{
-    height: 400, 
+    height: 350, 
     backgroundColor: '#F2AA4CFF',
     width: '100%',
-    borderRadius: 20,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
   },
     sectionWrapper:{
         flex:1,
