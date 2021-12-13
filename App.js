@@ -26,7 +26,9 @@ export default class App extends Component {
   creatCahnnel =() =>{
     PushNotification.createChannel({
       channelId:"test-channel",
-      channelName:"Test channel"
+      channelName:"Test channel",
+      soundName: "default",
+      playSound: true,
     })
   }
   handleNotificationRest=()=>{
@@ -34,6 +36,9 @@ export default class App extends Component {
     PushNotification.localNotification({
       channelId:"test-channel",
       message:"Time to Rest",
+      playSound: true,
+      soundName: "default",
+      vibrate: true,
     })
   }
   handleNotificationWork=()=>{
@@ -41,6 +46,9 @@ export default class App extends Component {
     PushNotification.localNotification({
       channelId:"test-channel",
       message:"Time to Work",
+      playSound:true,
+      soundName: "default",
+      vibrate:true,
     })
   }
   componentWillUnmount() {
