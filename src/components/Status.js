@@ -19,35 +19,52 @@ import RoundButton from '../gadgets/RoundButton';
 const Status = ({isWorking}) => {
 
   return (
-      <View style={styles.container} >
-        <View style={styles.sectionWrapper}>
-          {isWorking===true?
-            <><
-              WorkIcon name="work" size={80} color="#900" />
-              <Text style={styles.sectionTitle}>Work Hard</Text>
-            </>
-            :
-            <>
-              <RestIcon name="rest" size={80} color="#900" />
-              <Text style={styles.sectionTitle}>Take a Break</Text>
-            </>
-        
-          }
+    <View style={styles.container}>
+      <View style={styles.container1}></View>
+        <View style={styles.container2} >
+          <View style={styles.sectionWrapper}>
+            {isWorking===true?
+              <><
+                WorkIcon name="work" size={80} color="#900" />
+                <Text style={styles.sectionTitle}>Work Hard</Text>
+              </>
+              :
+              <>
+                <RestIcon name="rest" size={80} color="#900" />
+                <Text style={styles.sectionTitle}>Take a Break</Text>
+              </>
+          
+            }
 
+          </View>
         </View>
-
-
-      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container:{
-    height: 350, 
-    backgroundColor: '#F2AA4CFF',
+    //height: 350, 
+    //height: 400,
+    position:'relative',
+    flex:1.5,
     width: '100%',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    backgroundColor: '#363636',
+    borderTopRightRadius: 90,
+  },
+  container1:{
+    position:'relative',
+    flex:1,
+    width: '100%',
+  },
+  container2:{
+    //height: 350, 
+    position:'relative',
+    flex:15,
+    backgroundColor: '#FFFFFF',
+    width: '100%',
+    //borderTopLeftRadius: 20,
+    borderTopRightRadius: 90,
   },
     sectionWrapper:{
         flex:1,
